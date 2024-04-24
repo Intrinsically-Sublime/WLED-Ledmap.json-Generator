@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WLED-Ledmap.json-Generator</title>
+    <link rel="stylesheet" type="text/css" href="XYmapper.css">
+
+    <script src="XYmapper.js"></script>
+
+  </head>
+  <body>
+    <h2>WLED-Ledmap.json-Generator</h2>
+    <hr>
+    
+    <h3>How to use</h3>
+    <ol>
+      <li>Configure the array by setting the maximum x and y dimensions and click Rebuild.<br>
+      <li>Click the LEDs to edit the shape of the array by enabling, discarding or hiding pixels.<br>
+      <li>Download the resulting "ledmap.json" file and upload it to your device via http://yourdeviceip/edit (does not work in AP mode)<br>
+    </ol>
+    <!--      <b> *</b> For wLED freestyle mode you must start with all pixels unchecked and then select them in the order you want them.<br>-->
+      <b> **</b> For "LED# to GRID#" mode you must set the array in WLED 2d settings top left horizontal (not serpentine) regardless of your actual layout.<br>
+    <hr>
+    <div class="controls">
+      <div class="optionBox">
+        <label><b>Array</b></label>
+            <div class="inputBox">
+              <input id="xdim" type="number" name="xdim" min="1" value="16"/>
+              <label class="inputText">Width</label>
+            </div>
+            <div class="inputBox">
+              <input id="ydim" type="number" name="ydim" min="1" value="5"/>
+              <label class="inputText">Height</label>
+            </div>
+      </div>
+      <div class="optionBox">
+        <br>
+          <div class="buildBox">
+            <input type="checkbox" id="clearAllCHK" onchange="clearAllPixels(this)">
+            <label for="clearAllCHK">Start empty</label>
+          </div>
+          <div class="buildBox">
+            <button id="rebuildArray" onclick="buildGrid()">Rebuild</button>
+          </div>
+      </div>
+      <div class="optionBox">
+        <label><b>Options</b></label>
+          <div class="buildBox">
+            <input type="radio" checked id="wLedCHK" name="outputMode" onchange="wLedOutput(this)">
+            <label for="wLedCHK">Normal</label>
+<!--            <input type="radio" id="freeCHK" name="outputMode" onchange="freeOutput(this)">-->
+<!--            <label for="freeCHK">Freestyle <b>*</b></label>--><br>
+            <input type="radio" checked id="BmapCHK" name="mapMode" onchange="wledMapA(this)">
+            <label for="BmapCHK">LED# to GRID#  <b> **</b></label><br>
+            <input type="radio" id="AmapCHK" name="mapMode" onchange="wledMapB(this)">
+            <label for="AmapCHK">GRID# to LED#</label>
+          </div><br>
+      </div>
+      <div class="optionBox">
+        <div class="buildBox">
+          <input type="checkbox" checked id="discardCHK" onchange="discardPixels(this)">
+          <label for="discardCHK">Discard unchecked pixels</label><br>
+          <input type="checkbox" id="serpentineCHK" onchange="serpentineLayout(this)">
+          <label for="discardCHK">Serpentine</label><br>
+          <input type="checkbox" id="verticalCHK" onchange="verticalLayout(this)">
+          <label for="discardCHK">Vertical</label><br>
+          <input type="checkbox" id="vflipCHK" onchange="vflipLayout(this)">
+          <label for="discardCHK">V-Flip</label>
+          <input type="checkbox" id="hflipCHK" onchange="hflipLayout(this)">
+          <label for="discardCHK">H-Flip</label>
+        </div>
+      </div>
+      <div class="optionBox">
+          <label for="discardCHK"><b>Matrix name</b></label>
+        <div class="buildBox">
+          <input class="nameBox" id="matrixName" type="text" name="matrixName" value="my_matrix"/><br>
+          <button class="button" id="downloadFile" onclick="download()">Download</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ledGrid" id="ledgrid"></div>
+    <div id="infoOut"></div>
+    <br>
+    <div id="result"></div>
+    
+    <ul><br>
+      <label><b>ISSUES:</b></label> <a href="https://github.com/Intrinsically-Sublime/WLED-Ledmap.json-Generator/issues">Github</a>
+        <hr style="width:35%;text-align:left;margin-left:0">
+      <label><b>CREDIT:</b></label>
+        <ul>
+          <p><a href="https://github.com/Intrinsically-Sublime/WLED-Ledmap.json-Generator">WLED Ledmap.json Generator Code </a>by Intrinsically-Sublime<br> 
+          Based on FastLED <a href="https://github.com/macetech/FastLED-XY-Map-Generator"> XY-Map-Generator</a> by Garrett Mace</p>
+        </ul>
+        <hr style="width:35%;text-align:left;margin-left:0">
+    </ul>
+  </body>
+</html>
