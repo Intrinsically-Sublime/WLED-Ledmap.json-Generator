@@ -21,3 +21,5 @@ Try it here: <a href="https://intrinsically-sublime.github.io/WLED-Ledmap.json-G
 
 Based on<a href="https://github.com/Intrinsically-Sublime/FastLED-XY-Map-Generator"> XY-Map-Generator</a> by Intrinsically-Sublime
 which is based on<a href="https://github.com/macetech/FastLED-XY-Map-Generator"> XY-Map-Generator</a> by Garrett Mace
+
+![Screenshot](https://github.com/Intrinsically-Sublime/WLED-Ledmap.json-Generator/blob/main/wled-ledmap-generator_screenshot.png)
