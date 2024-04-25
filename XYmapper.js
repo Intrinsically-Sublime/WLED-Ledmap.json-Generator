@@ -449,7 +449,7 @@ function printMap() {
         
 // NORMAL LED2GRID OUTPUT CODE
         if (led2grid == 1) {
-          mapHTML += pad('  ', pixelarray[ledindex][2], true);
+          mapHTML += pad('    ', pixelarray[ledindex][2], true);
           ledindex++;
           if (ledindex < num_leds) mapHTML += ",";
           if ((x+1) % xdim === 0) mapHTML += '<BR>';
@@ -459,7 +459,7 @@ function printMap() {
           var outOrder = 0;
           while (outOrder < num_leds) {
             if (pixelarray[outOrder][2] == ledindex && ledindex <= (countActiveLEDs()-1)) {
-              mapHTML += pad('   ', outOrder, true);
+              mapHTML += pad('    ', outOrder, true);
               ledindex++;
               if (ledindex < countActiveLEDs()) mapHTML += ",";
               if ((x+1) % xdim === 0) mapHTML += '<BR>';
@@ -506,7 +506,6 @@ function printMap() {
 
 function loadGrid() {
   renumberLEDs();
-//  drawArrows();
   buildGrid();
 }
 
