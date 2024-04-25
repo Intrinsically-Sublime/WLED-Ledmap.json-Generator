@@ -1,5 +1,12 @@
 ## WLED Ledmap.json Generator
 
+Try it LIVE! https://intrinsically-sublime.github.io/WLED-Ledmap.json-Generator/
+
+### Other versions
+WLED 2d-gap.json https://intrinsically-sublime.github.io/WLED-2D-gaps.json-Generator/
+
+FastLED XY remapper https://intrinsically-sublime.github.io/FastLED-XY-Map-Generator/
+
 ### About
 * Normal mode remaps the unchecked pixels in the array to -1 or the end of the array depending on the discard pixel setting.
   * Normal mode uses all the other options
