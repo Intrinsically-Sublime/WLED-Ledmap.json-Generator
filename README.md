@@ -1,6 +1,6 @@
 ## WLED Ledmap.json Generator
 
-Try it LIVE! https://intrinsically-sublime.github.io/WLED-Ledmap.json-Generator/
+Try it here: <a href="https://intrinsically-sublime.github.io/WLED-Ledmap.json-Generator/">WLED-Ledmap.json-Generator<br></a>
 
 ### Other versions
 WLED 2d-gap.json https://intrinsically-sublime.github.io/WLED-2D-gaps.json-Generator/
@@ -22,9 +22,6 @@ FastLED XY remapper https://intrinsically-sublime.github.io/FastLED-XY-Map-Gener
   <li>Click the LEDs to edit the shape of the array by enabling, disabling or hiding pixels.<br>
   <li>Download the resulting "ledmap.json" file and upload it to your device via http://yourdeviceip/edit (does not work in AP mode)<br>
 </ol>
-
-Try it here: <a href="https://intrinsically-sublime.github.io/WLED-Ledmap.json-Generator/">WLED-Ledmap.json-Generator<br></a>
-
 
 Based on<a href="https://github.com/Intrinsically-Sublime/FastLED-XY-Map-Generator"> XY-Map-Generator</a> by Intrinsically-Sublime
 which is based on<a href="https://github.com/macetech/FastLED-XY-Map-Generator"> XY-Map-Generator</a> by Garrett Mace
