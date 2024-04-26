@@ -25,6 +25,18 @@ var wiringHFlip = "left";
 var freestyleCounter = 0;
 var lastFreestyle = 0;
 
+function lightMode() {
+  var element = document.body;
+  element.classList.toggle("light-mode");
+   
+  var btn = document.getElementById("lightToggle");
+  if (btn.innerText == "Dark") {
+    btn.innerText = "Light";
+  } else {
+    btn.innerText = "Dark";
+  }
+}
+
 function showGuide() {
     document.getElementById("popupGuide").style.display = "block";
 }

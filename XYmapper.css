@@ -1,3 +1,23 @@
+body {
+  background-color: #1f2224;
+  color: white;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+a:link { color: #9b24b3; }
+a:visited { color: #4fd9f6; }
+a:hover { color: red; text-decoration: underline; }
+
+.darkToggle {
+  float: right;
+  margin-right: 2em;
+  margin-top: 0.5em;
+}
+
 .ledpixel {
   display:table-cell;
   position: relative;
@@ -150,7 +170,7 @@
   position: absolute;
   right: 0;
   z-index: 3;
-  color: white;
+  color: black;
   font-size: 32px;
   font-weight: bold;
   padding: 0.2em 0.45em;
