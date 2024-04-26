@@ -25,6 +25,14 @@ var wiringHFlip = "left";
 var freestyleCounter = 0;
 var lastFreestyle = 0;
 
+function showGuide() {
+    document.getElementById("popupGuide").style.display = "block";
+}
+
+function hideGuide() {
+    document.getElementById("popupGuide").style.display = "none";
+}
+
 function download(){
     matrixName = (document.getElementById("matrixName")).value;
     printMap();

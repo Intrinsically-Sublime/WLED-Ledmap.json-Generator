@@ -127,6 +127,45 @@
   border-color: transparent transparent #FF0000 transparent;
 }
 
+#popupGuide {
+  position: absolute;
+  display: none;
+  margin: 1% auto;
+  max-width: 90%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.popupContents {
+  max-width: 100%;
+  border-style: solid;
+  border-width: 0.25em;
+  border-color: black;
+}
+
+.closeButton {
+  position: absolute;
+  right: 0;
+  z-index: 3;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  padding: 0.2em 0.45em;
+  background-color: lightgrey;
+  border-style: solid;
+  border-width: 0.1em;
+  border-color: black;
+}
+
+.closeButton:hover,
+.closeButton:focus {
+  color: red;
+  cursor: pointer;
+}
+
 .controls {
   font-size: 1em;
   margin-bottom: 0.25em;

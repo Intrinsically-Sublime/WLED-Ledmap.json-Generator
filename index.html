@@ -17,7 +17,7 @@
       <a href="https://intrinsically-sublime.github.io/WLED-Arbitrary-Path-Ledmap.json-Generator/">WLED Arbitrary paths</a>
     <hr>
     
-    <h3>How to use</h3>
+    <label style="font-size: 1.1em;"><b>How to use  </b></label> <button id="showGuide" onclick="showGuide()">Video guide</button>
     <ol>
       <li>Configure the array by setting the maximum x and y dimensions and click Rebuild.<br>
       <li>Click the LEDs to edit the shape of the array by enabling, discarding or hiding pixels.<br>
@@ -95,5 +95,11 @@
         </ul>
         <hr style="width:35%;text-align:left;margin-left:0">
     </ul>
+    
+    <div id="popupGuide" class="modal">
+        <div class="closeButton" onclick="hideGuide()"> &times; </div>
+        <img class="popupContents" src="https://raw.githubusercontent.com/dosipod/WLED-Ledmap-Generator/master/assets/images/content/how_to_use_map_genrator.gif" alt="Animated instructions">
+    </div>
+    
   </body>
 </html>
