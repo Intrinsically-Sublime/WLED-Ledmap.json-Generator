@@ -15,8 +15,8 @@ WLED Arbitrary Path Ledmap.json Generator https://intrinsically-sublime.github.i
   * Normal mode uses all the other options
 * Two mapping modes available. Map the LED# to the GRID# or Map the GRID# to the LED#
   * If one doesn't work try the other?
-* ~~Freestyle mode ignores all options and allows you to select the pixels in any order you wish.~~
-  * ~~To undo a mistake you must retrace your steps backwards.~~
+* Freestyle mode allows you to select the pixels in any order to follow your wiring layout.
+  * To undo a mistake you must retrace your steps backwards.
 
 ### How to use
 
