@@ -24,6 +24,7 @@ var wiringVFlip = "top";
 var wiringHFlip = "left";
 var freestyleCounter = 0;
 var lastFreestyle = 0;
+var offsetValue = 0;
 
 function lightMode() {
   var element = document.body;
@@ -342,6 +343,7 @@ function renumberLEDs() {
   var inactiveLEDs = countActiveLEDs();
   var xtemp = 0;
   var ytemp = 0;
+  offsetValue = Number(document.getElementById('startIndex').value);
 
   if (vertical == 0 ) {
     ytemp = ydim;
@@ -359,7 +361,6 @@ function renumberLEDs() {
       } else {
         if (hflip == 1) var ty = ytemp-y-1; else var ty = y;
         if (((hflip == 1) ^ (vflip == 1)) ^ (serpentine == 0 && hflip == 1)) var tx = xtemp-x-1;
-        //if ((hflip == 1) ^ (serpentine == 1 && vflip == 1)) var tx = xtemp-x-1;
         else var tx = x;
       }
 
@@ -390,9 +391,9 @@ function renumberLEDs() {
         pixelarray[ledpos][1] = tdir;
         if (pixelarray[ledpos][0] == "E") {
             if (freeStyle == 1) {
-              pixelarray[ledpos][2] = pixelarray[ledpos][3];
+              pixelarray[ledpos][2] = (pixelarray[ledpos][3] + offsetValue);
             } else {
-              pixelarray[ledpos][2] = activeLEDs;
+              pixelarray[ledpos][2] = (activeLEDs + offsetValue);
               activeLEDs++;
             }
         } else {
@@ -400,7 +401,7 @@ function renumberLEDs() {
             if (freeStyle == 1 || discardP == 1) {
               pixelarray[ledpos][2] = -1;
             } else {
-              pixelarray[ledpos][2] = inactiveLEDs;
+              pixelarray[ledpos][2] = (inactiveLEDs + offsetValue);
               inactiveLEDs++;
             }
           }
@@ -450,7 +451,11 @@ function printMap() {
   mapHTML += '{"n":"' + matrixName + '","width":' + xdim + ',"height":' + ydim + ',"map":[<BR>';
   for (x = 0; x < num_leds; x++) {
     if (freeStyle == 1) {
-      mapHTML += pixelarray[ledindex][3];
+      if (pixelarray[ledindex][3] >= 0) {
+        mapHTML += (pixelarray[ledindex][3] + offsetValue);
+      } else {
+        mapHTML += pixelarray[ledindex][3];
+      }
     } else {
       mapHTML += pixelarray[ledindex][2]
     }

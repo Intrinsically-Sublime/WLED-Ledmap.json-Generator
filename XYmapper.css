@@ -196,7 +196,7 @@ a:hover { color: red; text-decoration: underline; }
   float: left;
   padding-left: 0.5em;
   margin: 0.25em;
-  height: 6em;
+  height: 6.5em;
 }
 
 .ledGrid {
@@ -216,6 +216,7 @@ a:hover { color: red; text-decoration: underline; }
 .nameBox {
   width: 8em;
   font-size: 1em;
+  height: 1.15em;
   text-align: center;
   margin-bottom: 0.4em;
 }

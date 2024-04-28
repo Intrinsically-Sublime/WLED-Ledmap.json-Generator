@@ -24,11 +24,12 @@
       <li>Click the LEDs to edit the shape of the array by enabling, discarding or hiding pixels.<br>
       <li>Download the resulting "ledmap.json" file and upload it to your device via http://yourdeviceip/edit (does not work in AP mode)<br>
     </ol>
-    <b> *</b> For freestyle mode you must start with all pixels unchecked and then select them in the order you want them. There are NO arrows in freestyle and the only indicator of the order is the numbering.<br>
+    <b> *</b> For freestyle mode you must start with all pixels unchecked and then select them in the order you want them.<br>&emsp; There are NO arrows in freestyle and the only indicator of the order is the numbering.<br>
+    <b> **</b> Allows you to set the first LED number. Example: Your matrix is at the end of a strip.<br>
     <hr>
     <div class="controls">
       <div class="optionBox">
-        <label><b>Array</b></label>
+        <label class="nameBox" ><b>Array</b></label>
             <div class="inputBox">
               <input id="xdim" type="number" name="xdim" min="1" value="16"/>
               <label class="inputText">Width</label>
@@ -36,6 +37,10 @@
             <div class="inputBox">
               <input id="ydim" type="number" name="ydim" min="1" value="5"/>
               <label class="inputText">Height</label>
+            </div>
+            <div class="inputBox">
+              <input id="startIndex" type="number" name="startIndex" min="0" value="0"/>
+              <label class="inputText">Start (n)**</label>
             </div>
       </div>
       <div class="optionBox">
@@ -49,7 +54,7 @@
           </div>
       </div>
       <div class="optionBox">
-        <label><b>Options</b></label>
+        <label class="nameBox" ><b>Options</b></label>
           <div class="buildBox">
             <input type="radio" checked id="wLedCHK" name="outputMode" onchange="wLedOutput(this)">
             <label for="wLedCHK">Normal</label><br>
@@ -72,10 +77,14 @@
         </div>
       </div>
       <div class="optionBox">
-          <label for="discardCHK"><b>Matrix name</b></label>
+        <label class="nameBox" ><b>Matrix name</b></label>
         <div class="buildBox">
           <input class="nameBox" id="matrixName" type="text" name="matrixName" value="my_matrix"/><br>
+        </div>
+        <div class="buildBox">
           <button class="button" id="downloadFile" onclick="download()">Download</button><br>
+        </div>
+        <div class="buildBox">
           <button class="button" id="copyResults" onclick="copyOutput()">Copy</button>
         </div>
       </div>
